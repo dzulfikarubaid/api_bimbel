@@ -52,4 +52,4 @@ class modelPendaftaran(models.Model):
     id_ortu = models.ForeignKey(modelOrtu, on_delete=models.CASCADE)
     id_siswa = models.ForeignKey(modelSiswa, on_delete=models.CASCADE)
     def __str__(self):
-        return str(self.no_pendaftaran) + " " + str(self.tanggal_pendaftaran)
+        return str(self.no_pendaftaran) + " | " + str(self.tanggal_pendaftaran)

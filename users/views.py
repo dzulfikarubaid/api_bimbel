@@ -165,7 +165,7 @@ def deleteSiswa(request, id):
 def deleteOrtu(request, id):
     try:
         ModelObject = modelOrtu.objects.get(id=id_ortu)
-    except:
+    except modelOrtu.DoesNotExist:
         status = {'status':'data tidak ditemukan'}
         return Response(status)
     ModelObject.delete()

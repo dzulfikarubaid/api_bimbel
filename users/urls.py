@@ -22,11 +22,11 @@ urlpatterns = [
     path('update_mapel/<int:id_mapel>/',views.updateMapel, name='update_mapel'),
     path('update_pengajar/<int:id_pengajar>/',views.updatePengajar, name='update_pengajar'),
     path('update_paket/<int:id_paket>/',views.updatePaket, name='update_paket'),
-    path('update_pendaftaran/<int:nomor_pendaftaran>/',views.updatePendaftaran, name='update_pendaftaran'),
+    path('update_pendaftaran/<int:no_pendaftaran>/',views.updatePendaftaran, name='update_pendaftaran'),
     path('delete_siswa/<int:id_siswa>/',views.deleteSiswa, name='delete_siswa'),
     path('delete_ortu/<int:id_ortu>/',views.deleteOrtu, name='delete_ortu'),
     path('delete_mapel/<int:id_mapel>/',views.deleteMapel, name='delete_mapel'),
     path('delete_pengajar/<int:id_pengajar>/',views.deletePengajar, name='delete_pengajar'),
     path('delete_paket/<int:id_paket>/',views.deletePaket, name='delete_paket'),
-    path('delete_pendaftaran/<int:nomor_pendaftaran>/',views.deletePendaftaran, name='delete_pendaftaran'),
+    path('delete_pendaftaran/<int:no_pendaftaran>/',views.deletePendaftaran, name='delete_pendaftaran'),
 ]

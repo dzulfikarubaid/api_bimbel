@@ -139,9 +139,9 @@ def updatePaket(request, id_paket):
         return Response(serializer.data)
     return Response(serializer.errors)
 @api_view(['PUT'])
-def updatePendaftaran(request, nomor_pendaftaran):
+def updatePendaftaran(request, no_pendaftaran):
     try:
-        ModelObject = modelPendaftaran.objects.get(nomor_pendaftaran=nomor_pendaftaran)
+        ModelObject = modelPendaftaran.objects.get(no_pendaftaran=no_pendaftaran)
     except:
         status = {'status':'data tidak ditemukan'}
         return Response(status)
@@ -184,9 +184,9 @@ def deletePaket(request, id_paket):
         'status':'data telah dihapus'
     })
 @api_view(['DELETE'])
-def deletePendaftaran(request, nomor_pendaftaran):
+def deletePendaftaran(request, no_pendaftaran):
     try:
-        ModelObject = modelPendaftaran.objects.get(nomor_pendaftaran=nomor_pendaftaran)
+        ModelObject = modelPendaftaran.objects.get(no_pendaftaran=no_pendaftaran)
     except:
         status = {'status':'data tidak ditemukan'}
         return Response(status)

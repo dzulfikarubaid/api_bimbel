@@ -6,7 +6,6 @@ from django.db import models
 class modelOrtu(models.Model):
     id_ortu = models.AutoField(primary_key=True)
     nama = models.CharField(max_length=100)
-    usia = models.IntegerField()
     alamat = models.CharField(max_length=250)
     jenis_kelamin = models.CharField(max_length=50)
     email = models.CharField(max_length=100)

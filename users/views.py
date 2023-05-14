@@ -4,8 +4,7 @@ from rest_framework.response import Response
 from .serializers import serializerMapel, serializerSiswa, serializerOrtu, serializerPendaftaran, serializerPengajar, serializerPaket
 from .models import modelMapel, modelSiswa, modelOrtu, modelPendaftaran, modelPengajar, modelPaket
 # Create your views here.
-def index(request):
-    return redirect('docs/')
+
 @api_view(['POST'])
 def addSiswa(request):
     serializer = serializerSiswa(data=request.data)
@@ -217,3 +216,6 @@ def deletePengajar(request, id):
     return Response({
         'status':'data telah dihapus'
     })
+
+def index(request):
+    return redirect('docs/')

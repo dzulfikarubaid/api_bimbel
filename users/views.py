@@ -79,9 +79,9 @@ def viewPendaftaran(request):
     SerializerObject = serializerPendaftaran(Object,many=True)
     return Response(SerializerObject.data)
 @api_view(['PUT'])
-def updateSiswa(request, id):
+def updateSiswa(request, id_siswa):
     try:
-        ModelObject = modelSiswa.objects.get(id=id_siswa)
+        ModelObject = modelSiswa.objects.get(id_siswa=id_siswa)
     except:
         status = {'status':'data tidak ditemukan'}
         return Response(status)
@@ -91,9 +91,9 @@ def updateSiswa(request, id):
         return Response(serializer.data)
     return Response(serializer.errors)
 @api_view(['PUT'])
-def updateOrtu(request, id):
+def updateOrtu(request, id_ortu):
     try:
-        ModelObject = modelOrtu.objects.get(id=id_ortu)
+        ModelObject = modelOrtu.objects.get(id_ortu=id_ortu)
     except:
         status = {'status':'data tidak ditemukan'}
         return Response(status)
@@ -103,9 +103,9 @@ def updateOrtu(request, id):
         return Response(serializer.data)
     return Response(serializer.errors)
 @api_view(['PUT'])
-def updateMapel(request, id):
+def updateMapel(request, id_mapel):
     try:
-        ModelObject = modelMapel.objects.get(id=id_mapel)
+        ModelObject = modelMapel.objects.get(id_mapel=id_mapel)
     except :
         status = {'status':'data tidak ditemukan'}
         return Response(status)
@@ -115,9 +115,9 @@ def updateMapel(request, id):
         return Response(serializer.data)
     return Response(serializer.errors)
 @api_view(['PUT'])
-def updatePengajar(request, id):
+def updatePengajar(request, id_pengajar):
     try:
-        ModelObject = modelPengajar.objects.get(id=id_pengajar)
+        ModelObject = modelPengajar.objects.get(id_pengajar=id_pengajar)
     except:
         status = {'status':'data tidak ditemukan'}
         return Response(status)
@@ -127,9 +127,9 @@ def updatePengajar(request, id):
         return Response(serializer.data)
     return Response(serializer.errors)
 @api_view(['PUT'])
-def updatePaket(request, id):
+def updatePaket(request, id_paket):
     try:
-        ModelObject = modelPaket.objects.get(id=id_paket)
+        ModelObject = modelPaket.objects.get(id_paket=id_paket)
     except:
         status = {'status':'data tidak ditemukan'}
         return Response(status)
@@ -139,9 +139,9 @@ def updatePaket(request, id):
         return Response(serializer.data)
     return Response(serializer.errors)
 @api_view(['PUT'])
-def updatePendaftaran(request, id):
+def updatePendaftaran(request, nomor_pendaftaran):
     try:
-        ModelObject = modelPendaftaran.objects.get(id=nomor_pendaftaran)
+        ModelObject = modelPendaftaran.objects.get(nomor_pendaftaran=nomor_pendaftaran)
     except:
         status = {'status':'data tidak ditemukan'}
         return Response(status)
@@ -151,9 +151,9 @@ def updatePendaftaran(request, id):
         return Response(serializer.data)
     return Response(serializer.errors)
 @api_view(['DELETE'])
-def deleteSiswa(request, id):
+def deleteSiswa(request, id_siswa):
     try:
-        ModelObject = modelSiswa.objects.get(id=id_siswa)
+        ModelObject = modelSiswa.objects.get(id_siswa=id_siswa)
     except:
         status = {'status':'data tidak ditemukan'}
         return Response(status)
@@ -162,20 +162,9 @@ def deleteSiswa(request, id):
         'status':'data telah dihapus'
     })
 @api_view(['DELETE'])
-def deleteOrtu(request, id):
+def deleteOrtu(request, id_ortu):
     try:
-        ModelObject = modelOrtu.objects.get(id=id_ortu)
-    except modelOrtu.DoesNotExist:
-        status = {'status':'data tidak ditemukan'}
-        return Response(status)
-    ModelObject.delete()
-    return Response({
-        'status':'data telah dihapus'
-    })
-@api_view(['DELETE'])
-def deletePaket(request, id):
-    try:
-        ModelObject = modelPaket.objects.get(id=id_paket)
+        ModelObject = modelOrtu.objects.get(id_ortu=id_ortu)
     except:
         status = {'status':'data tidak ditemukan'}
         return Response(status)
@@ -184,9 +173,9 @@ def deletePaket(request, id):
         'status':'data telah dihapus'
     })
 @api_view(['DELETE'])
-def deletePendaftaran(request, id):
+def deletePaket(request, id_paket):
     try:
-        ModelObject = modelPendaftaran.objects.get(id=nomor_pendaftaran)
+        ModelObject = modelPaket.objects.get(id_paket=id_paket)
     except:
         status = {'status':'data tidak ditemukan'}
         return Response(status)
@@ -195,9 +184,9 @@ def deletePendaftaran(request, id):
         'status':'data telah dihapus'
     })
 @api_view(['DELETE'])
-def deleteMapel(request, id):
+def deletePendaftaran(request, nomor_pendaftaran):
     try:
-        ModelObject = modelMapel.objects.get(id=id_mapel)
+        ModelObject = modelPendaftaran.objects.get(nomor_pendaftaran=nomor_pendaftaran)
     except:
         status = {'status':'data tidak ditemukan'}
         return Response(status)
@@ -206,9 +195,20 @@ def deleteMapel(request, id):
         'status':'data telah dihapus'
     })
 @api_view(['DELETE'])
-def deletePengajar(request, id):
+def deleteMapel(request, id_mapel):
     try:
-        ModelObject = modelPengajar.objects.get(id=id_pengajar)
+        ModelObject = modelMapel.objects.get(id_mapel=id_mapel)
+    except:
+        status = {'status':'data tidak ditemukan'}
+        return Response(status)
+    ModelObject.delete()
+    return Response({
+        'status':'data telah dihapus'
+    })
+@api_view(['DELETE'])
+def deletePengajar(request, id_pengajar):
+    try:
+        ModelObject = modelPengajar.objects.get(id_pengajar=id_pengajar)
     except:
         status = {'status':'data tidak ditemukan'}
         return Response(status)

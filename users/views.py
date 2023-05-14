@@ -10,42 +10,42 @@ def addSiswa(request):
     serializer = serializerSiswa(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return Response({serializer.data})
+        return Response({'status':'data telah ditambahkan'})
     return Response(serializer.errors)
 @api_view(['POST'])
 def addOrtu(request):
     serializer = serializerOrtu(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return Response({serializer.data})
+        return Response({'status':'data telah ditambahkan'})
     return Response(serializer.errors)
 @api_view(['POST'])
 def addMapel(request):
     serializer = serializerMapel(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return Response({serializer.data})
+        return Response({'status':'data telah ditambahkan'})
     return Response(serializer.errors)
 @api_view(['POST'])
 def addPengajar(request):
     serializer = serializerPengajar(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return Response({serializer.data})
+        return Response({'status':'data telah ditambahkan'})
     return Response(serializer.errors)
 @api_view(['POST'])
 def addPaket(request):
     serializer = serializerPaket(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return Response({serializer.data})
+        return Response({'status':'data telah ditambahkan'})
     return Response(serializer.errors)
 @api_view(['POST'])
 def addPendaftaran(request):
     serializer = serializerPendaftaran(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return Response({serializer.data})
+        return Response({'status':'data telah ditambahkan'})
     return Response(serializer.errors)
 
 @api_view(['GET'])
